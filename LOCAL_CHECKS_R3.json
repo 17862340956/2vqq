@@ -1,0 +1,11 @@
+{
+  "build_fix": "r3",
+  "reported_failure": "drivers Error 2 after 22 minutes in aggregate make vmlinux modules",
+  "r3_change": "build vmlinux first, then external cpuinfo_spoof module; do not build unrelated in-tree modules aggregate",
+  "preserved": ["cpuinfo_spoof.c", "php110_layout.h", "captured.config", "kirin9020.h", "verify_module.py", "run.sh"],
+  "vendor_dependency_fix": "official 901 vendor repository restored before olddefconfig",
+  "vmlinux_log": "build/run.*/logs/01-vmlinux.log",
+  "external_module_log": "build/run.*/logs/02-external-module.log",
+  "c_compilation": "not run locally; Linux workflow pending",
+  "phone_runtime": "not tested"
+}

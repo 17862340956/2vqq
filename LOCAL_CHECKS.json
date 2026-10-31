@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "test": "reject r5_namespace_fixed_20261028/cpuinfo_spoof.ko",
+      "result": "passed",
+      "reason": "wrong module name/revision"
+    },
+    {
+      "test": "reject php110_extra_review_20261029/php110_extra_20261029_143243_18028/modules/sample_1_adsp-v2.ko",
+      "result": "passed",
+      "reason": "wrong module name/revision"
+    },
+    {
+      "test": "reject php110_extra_review_20261029/php110_extra_20261029_143243_18028/modules/sample_2_ak7314_22021.ko",
+      "result": "passed",
+      "reason": "wrong module name/revision"
+    },
+    {
+      "test": "empty symvers rejected",
+      "result": "passed"
+    },
+    {
+      "test": "disabled CFI rejected",
+      "result": "passed"
+    },
+    {
+      "test": "display feature preset subset of captured target",
+      "result": "passed",
+      "feature_count": 36
+    }
+  ],
+  "real_ash_phone_script_syntax": "passed using busybox-w32 ash -n",
+  "C_compilation": "user screenshot confirms first olddefconfig failed before module compile; r2 full kernel build pending",
+  "positive_KO_verification": "not run; no PHP110 build yet",
+  "phone_runtime": "not tested",
+  "build_script_shell_parse": "BusyBox ash -n passed; real Bash/Linux execution not performed",
+  "embedded_build_python": "AST syntax passed",
+  "pinned_source_reference_hashes": "23 listed reference files matched",
+  "source_review": "independent review, no definite issue outstanding; not a compiler or runtime proof",
+  "workflow": "reviewed root/subdirectory location and success-only verified artifact upload",
+  "buildfix_r2": {
+    "reported_failure": "init/Kconfig:858 missing kernel/oplus_cpu/sched/Kconfig during olddefconfig",
+    "root_cause": "official kernel symlink points outside kernel-only archive to omitted vendor source repository",
+    "official_modules_commit": "749b101b1a1487f1b1f8a5b4b3319e7ba6ed0a5d",
+    "official_modules_archive_sha256": "8a09d075536b8b6dec4ae5d3957b32890243ee4c1aca5963c5b85986c7fcd1d0",
+    "archive_downloaded_and_inspected": true,
+    "target_kconfig_and_makefile_hashes": "matched against pinned API content",
+    "portable_dependency_tests": {
+      "passed": 3,
+      "failed": 0
+    },
+    "symbolic_link_tests": {
+      "skipped_on_windows": 5,
+      "reason": "WinError1314 creating symlinks",
+      "linux_workflow": "tests run before actual build"
+    },
+    "python_and_embedded_python_syntax": "passed",
+    "ash_shell_syntax": "passed",
+    "actual_linux_kernel_build": "not rerun locally",
+    "module_and_captured_config": "byte-identical to prior kit"
+  }
+}
